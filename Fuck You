@@ -7903,4 +7903,31 @@ html:only-child > head + body div.app_a3002d > div.app__160d8 > div.layers__960e
 	right: unset !important;
 	transform: unset !important;
 	animation: unset !important;
+/* Title Bar Watermark (unchanged) */
+html:only-child > head + body div.bar_c38106 > div.title_c38106::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36"><text x="0" y="28" font-family="Arial, sans-serif" font-size="14" fill="rgba(var(--textbrightest_v), .4)">Basicbackground by devilbro</text></svg>');
+    position: fixed;
+    left: 80px;
+    width: 280px;
+    height: 36px;
+    opacity: .1;
+    transition: opacity .3s ease;
+    pointer-events: none;
+}
+
+html:only-child > head + body div.bar_c38106:hover > div.title_c38106::after {
+    opacity: 1;
+}
+
+/* Sidebar Watermark (overridden with bottom: 0px) */
+html:only-child > head + body div.app_a3002d > div.app__160d8 > div.layers__960e4.layers__160d8 > div.layer__960e4.baseLayer__960e4 + div.layer__960e4 > div.standardSidebarView__23e6b::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 18"><text x="0" y="14" font-family="Arial, sans-serif" font-size="12" fill="rgb(255, 255, 255)">Basicbackground by devilbro</text></svg>');
+    position: absolute;
+    bottom: 0px; /* Overridden to place watermark flush with bottom edge */
+    right: 15px;
+    width: 400px;
+    height: 18px;
+    opacity: .3;
+    z-index: -1;
+    pointer-events: none;
 }
